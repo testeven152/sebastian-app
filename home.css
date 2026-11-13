@@ -143,7 +143,7 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-rad
 .intro { padding: clamp(80px, 12vw, 160px) 0; }
 .big { font: 300 clamp(28px, 4.2vw, 50px)/1.18 var(--serif); letter-spacing: -.015em; text-wrap: balance; }
 .big em { font-style: italic; color: var(--clay); }
-.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--line2); }
+.pair { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--line2); }
 .pair p { margin-top: 10px; color: var(--ink2); }
 
 /* ---------- sections ---------- */
