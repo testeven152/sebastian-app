@@ -1,0 +1,19 @@
+/* Privacy and support pages: the home page's tokens and type (home.css),
+   set as a quiet reading column. */
+body { background: var(--bg); }
+.top { position: sticky; top: 0; }
+.doc { width: min(720px, 100% - 40px); margin-inline: auto; padding: clamp(48px, 8vw, 96px) 0 clamp(64px, 9vw, 120px); }
+.doc-head { display: flex; flex-direction: column; gap: 14px; padding-bottom: 32px; margin-bottom: 8px; border-bottom: 1px solid var(--line2); }
+.doc-head h1 { font-size: clamp(40px, 6.4vw, 68px); }
+.doc-head .lead { color: var(--ink2); font-size: 19px; }
+.doc h2 { font: 400 clamp(24px, 3vw, 30px)/1.2 var(--serif); letter-spacing: -.01em; margin: 44px 0 12px; }
+.doc p { margin: 0 0 14px; color: var(--ink2); max-width: 38em; }
+.doc p strong { color: var(--ink); font-weight: 500; }
+.doc a { color: var(--ink); text-decoration-color: var(--clay); text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
+.doc a:hover { color: var(--clay); }
+.doc .card { background: var(--surface); border: 1.5px solid var(--line2); box-shadow: 0 3px 0 var(--line2); border-radius: 22px; padding: 22px 24px 10px; margin: 0 0 16px; }
+.doc .card p:first-child { color: var(--ink); }
+.doc-more { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--line2); }
+.doc-more .btn { min-height: 50px; font-size: 16px; text-decoration: none; }
+.doc-more .btn.ink { color: var(--bg); }
+.rise { animation-duration: .7s; }
