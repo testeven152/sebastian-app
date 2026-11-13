@@ -1,9 +1,217 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sebastian</title><link rel="stylesheet" href="style.css"></head>
-<body><main>
-<h1>Sebastian</h1>
-<p class="meta">Class routines and a live timer for Lagree and Pilates instructors.</p>
-<p>Build a class move by move, with spring settings, timed holds and pulses, and colour-coded body-part blocks. Then teach it with a timer for every move, on your iPhone or your Apple Watch.</p>
-<nav><a href="support/">Support</a><a href="privacy/">Privacy policy</a></nav>
-</main></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sebastian Class Planner — plan your class, then teach it hands-free</title>
+<meta name="description" content="Sebastian is a class planner and live timer for reformer and Pilates instructors. Build a routine move by move, then run it from your iPhone or Apple Watch while you teach.">
+<meta name="theme-color" content="#ede3d6">
+<meta property="og:title" content="Sebastian Class Planner">
+<meta property="og:description" content="Teach the class, not the clock. A class planner and live timer for iPhone and Apple Watch.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/icon-180.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="preload" href="assets/fonts/Newsreader-normal-300_500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+<header class="top" id="top">
+  <a class="wordmark" href="#hero" aria-label="Sebastian, back to top">seb<i>.</i></a>
+  <nav>
+    <a href="#build">Build</a>
+    <a href="#teach">Teach</a>
+    <a href="#how">How to use it</a>
+    <a class="pill" href="#download">Download</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-photo" aria-hidden="true"></div>
+  <div class="hero-wash" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="meta rise" style="--d:0">Class planner &amp; live timer · iPhone and Apple Watch</p>
+      <h1 class="rise" style="--d:1">Teach the class,<br>not the clock.</h1>
+      <p class="lede rise" style="--d:2">Sebastian is for reformer and Pilates instructors. Plan your routine sitting down, then run it hands-free: a countdown for every move, your springs on screen, and a heads-up before every change.</p>
+      <div class="cta-row rise" style="--d:3">
+        <a class="btn ink" href="#download">Get the app</a>
+        <a class="btn ghost" href="#build">See how it works</a>
+      </div>
+    </div>
+
+    <!-- A live teach screen: it really counts down. -->
+    <div class="phone-stage rise" style="--d:2">
+      <div class="phone" id="heroPhone" data-tone="stone" role="img" aria-label="The app's teach screen, counting down a move">
+        <div class="ph-status"><span>9:52</span><span class="ph-island"></span><span class="ph-batt"></span></div>
+        <div class="ph-progress"><i id="hpProgress"></i></div>
+        <div class="ph-meta"><span id="hpCat">Legs · 18 of 32</span><span id="hpLeft">28:10</span></div>
+        <div class="ph-move" id="hpMove">Elevator lunge</div>
+        <div class="ph-seg" id="hpSeg">Full range</div>
+        <div class="ph-count" id="hpCount">0:09</div>
+        <div class="ph-strip" id="hpStrip"><span class="playhead" id="hpPlayhead"></span></div>
+        <div class="ph-springs" id="hpSprings"></div>
+        <div class="ph-note" id="hpNote">Knee stacked over ankle. Press through the heel, not the toes.</div>
+        <div class="ph-next"><span class="ml">Next</span><span class="dot" id="hpNextDot"></span><span id="hpNext">Wheelbarrow</span></div>
+        <div class="ph-controls"><span>‹</span><span>›</span><span class="wide">»</span></div>
+        <div class="ph-home"></div>
+      </div>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#intro" aria-label="Scroll down"><span></span></a>
+</section>
+
+<!-- ============ INTRO ============ -->
+<section class="intro" id="intro">
+  <div class="wrap narrow">
+    <p class="big reveal">A class has a hundred small timings. Sebastian keeps all of them, so <em>you can keep your eyes on the room.</em></p>
+    <div class="pair">
+      <div class="reveal"><span class="meta">01 · Build</span><p>Lay the class out as a track of tiles: moves, springs, timed segments and the changes between them.</p></div>
+      <div class="reveal" style="--d:1"><span class="meta">02 · Teach</span><p>Press play. One big number, the whole screen in the segment's colour, and what's next always in view.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BUILD ============ -->
+<section class="build dark" id="build">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="meta reveal">Build mode</span>
+      <h2 class="reveal" style="--d:1">Plan a class tile by tile.</h2>
+      <p class="reveal" style="--d:2">Moves, spring changes and transitions sit on one track, colour-coded by body part. Drag to reorder and the times add themselves up.</p>
+    </div>
+  </div>
+
+  <!-- A track of tiles that slides as you scroll. -->
+  <div class="track-window" aria-hidden="true"><div class="track" id="track"></div></div>
+
+  <div class="wrap build-grid">
+    <figure class="shot dark-shot reveal" data-parallax="0.06">
+      <img src="assets/shot-build.jpg" alt="A routine's timeline: an intensity chart, then move tiles with spring settings and a spring change between them." loading="lazy">
+    </figure>
+    <ul class="features">
+      <li class="reveal"><span class="num">1</span><div><h3>Segments you name yourself</h3><p>Split a move into timed segments and call them what you call them: Hold, Pulse, Burnout. Each one gets its own colour.</p></div></li>
+      <li class="reveal"><span class="num">2</span><div><h3>Springs for your machine</h3><p>Start from a built-in machine with its real springs, or set up your own studio's. Every move remembers its setting.</p></div></li>
+      <li class="reveal"><span class="num">3</span><div><h3>Changes get their own time</h3><p>When the springs differ between two moves, a spring change appears between them. Add a transition anywhere you need a breath.</p></div></li>
+      <li class="reveal"><span class="num">4</span><div><h3>A library of your moves</h3><p>Save the moves you teach most, with notes and cues, and reuse them across routines. Split left and right sides with one swipe.</p></div></li>
+    </ul>
+    <figure class="shot dark-shot reveal" data-parallax="-0.05">
+      <img src="assets/shot-routines.jpg" alt="The Routines list. Each routine card has a bar showing its mix of body parts." loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<!-- ============ TEACH (scroll-driven) ============ -->
+<section class="teach" id="teach" aria-label="Teach mode">
+  <div class="teach-stage" id="teachStage" data-tone="stone">
+    <div class="teach-top">
+      <span class="meta" id="tsMeta">Teach mode · Legs · 18 of 32</span>
+      <span class="meta" id="tsHint">Keep scrolling</span>
+    </div>
+    <div class="teach-center">
+      <div class="ts-move" id="tsMove">Elevator lunge</div>
+      <div class="ts-seg" id="tsSeg">Full range</div>
+      <div class="ts-count" id="tsCount">0:30</div>
+      <div class="ts-strip" id="tsStrip"><span class="playhead" id="tsPlayhead"></span></div>
+      <div class="ts-springs" id="tsSprings"></div>
+    </div>
+    <div class="teach-captions" id="tsCaptions">
+      <div class="cap on"><h3>One number, readable from across the studio.</h3><p>The countdown is the only thing that has to be read. Everything else is a glance.</p></div>
+      <div class="cap"><h3>The whole screen takes the segment's colour.</h3><p>Hold turns the room clay. You know where you are without reading a word.</p></div>
+      <div class="cap"><h3>Tones and taps on the last 3, 2, 1.</h3><p>Short cues mark each change. They play over your music without stopping it.</p></div>
+      <div class="cap"><h3>Spring changes are never skipped.</h3><p>The class waits at the boundary and shows the new setting until the springs are set.</p></div>
+    </div>
+    <div class="teach-dots" id="tsDots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+  </div>
+</section>
+
+<!-- ============ EVERYWHERE ============ -->
+<section class="everywhere" id="everywhere">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="meta reveal">Hands-free</span>
+      <h2 class="reveal" style="--d:1">Put the phone down. The class keeps going.</h2>
+    </div>
+    <div class="duo">
+      <article class="card light-card reveal">
+        <div class="card-copy"><span class="meta">Lock Screen · Dynamic Island</span><h3>Teach from a locked phone.</h3><p>The move, the countdown and the next springs stay on your Lock Screen. Lock the controls against stray taps while you're on the floor.</p></div>
+        <figure class="shot"><img src="assets/shot-lock-screen.jpg" alt="An iPhone Lock Screen showing the current move, its countdown and the next spring setting." loading="lazy"></figure>
+      </article>
+      <article class="card dark-card reveal" style="--d:1">
+        <div class="card-copy"><span class="meta">Apple Watch</span><h3>Or teach from your wrist.</h3><p>The watch runs the whole class, with a tap on the wrist before every change. Control it from either device and the other follows.</p></div>
+        <figure class="shot"><img src="assets/shot-apple-watch.jpg" alt="Two Apple Watch screens showing a segment, its countdown and the next spring change." loading="lazy"></figure>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECAP ============ -->
+<section class="recap" id="recap">
+  <div class="wrap recap-grid">
+    <div class="recap-copy">
+      <span class="meta reveal">After class</span>
+      <h2 class="reveal" style="--d:1">See where class ran long.</h2>
+      <p class="reveal" style="--d:2">The recap shows how long each move really took, next to what you planned. Keep the new timings with one tap, rate how the room felt, and leave yourself a note for next time.</p>
+      <div class="bars reveal" style="--d:3" aria-hidden="true">
+        <div class="bar-row"><span class="meta">Plan</span><div class="bar" id="barPlan"></div></div>
+        <div class="bar-row"><span class="meta">Class</span><div class="bar strong" id="barClass"></div></div>
+      </div>
+    </div>
+    <figure class="shot reveal" data-parallax="0.05"><img src="assets/shot-recap.jpg" alt="The class recap: total time against the plan, and the moves that ran long." loading="lazy"></figure>
+  </div>
+</section>
+
+<!-- ============ HOW TO USE ============ -->
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="meta reveal">How to use it</span>
+      <h2 class="reveal" style="--d:1">From blank page to first class in four steps.</h2>
+    </div>
+    <ol class="steps">
+      <li class="step reveal"><span class="step-n">1</span><h3>Pick your machine</h3><p>Open <b>Equipment</b>. Choose a built-in machine, or tap <b>+</b> to add your studio's own with its spring colours and counts.</p></li>
+      <li class="step reveal" style="--d:1"><span class="step-n">2</span><h3>Build the routine</h3><p>On <b>Routines</b>, tap <b>+</b>, then <b>Add move</b>. Set each move's length, springs and segments. Drag tiles to put them in order.</p></li>
+      <li class="step reveal" style="--d:2"><span class="step-n">3</span><h3>Press play</h3><p>Tap the green <b>▶</b>. After a short countdown the class runs itself. Skip ahead, step back, add 30 seconds or pause whenever you need to.</p></li>
+      <li class="step reveal" style="--d:3"><span class="step-n">4</span><h3>Review and refine</h3><p>When class ends, check the recap, keep the timings that worked, and the routine is ready for next time.</p></li>
+    </ol>
+    <p class="promise reveal">No account. No ads. No tracking. Your routines stay yours.</p>
+  </div>
+</section>
+
+<!-- ============ DOWNLOAD ============ -->
+<section class="download" id="download">
+  <div class="dl-photo" aria-hidden="true"></div>
+  <div class="dl-wash" aria-hidden="true"></div>
+  <div class="wrap dl-inner">
+    <span class="wordmark xl reveal">seb<i>.</i></span>
+    <h2 class="reveal" style="--d:1">Sebastian Class Planner</h2>
+    <p class="reveal" style="--d:2">For iPhone and Apple Watch.</p>
+    <!-- The App Store link is set once, in home.js (APP_STORE_URL). -->
+    <a class="btn store reveal" style="--d:3" id="storeButton" href="#download" aria-disabled="true">
+      <span class="store-small" id="storeSmall">Coming soon to the</span>
+      <span class="store-big">App Store</span>
+    </a>
+    <nav class="dl-links reveal" style="--d:4" aria-label="Privacy and support">
+      <a href="privacy/">Privacy policy</a>
+      <a href="support/">Support</a>
+    </nav>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 Steven Te. Sebastian is a planning and timing tool, not medical or fitness advice; instructors remain responsible for their classes.</p>
+    <p>Lagree, Megaformer and other product names belong to their owners. Sebastian isn't affiliated with or endorsed by them. Apple, iPhone, Apple Watch and App Store are trademarks of Apple Inc.</p>
+    <p>Studio photos: Maverick Frame on Unsplash, and Pexels. <a href="privacy/">Privacy policy</a> · <a href="support/">Support</a></p>
+  </div>
+</footer>
+
+<script src="home.js" defer></script>
+</body>
+</html>
